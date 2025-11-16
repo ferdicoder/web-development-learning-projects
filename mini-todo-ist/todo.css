@@ -1,0 +1,55 @@
+body{
+  font-family: arial;
+}
+p{
+  font-weight: bold;
+}
+.todo-name{
+  padding: 4px 8px; 
+}
+.due-date{
+  padding: 3px;
+}
+.add-button{
+  border: none; 
+  background-color: green;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+.add-button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s; 
+}
+
+.delete-button{
+  border: none;
+  background-color: red;
+  color: white; 
+  font-size: 14px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  width: 100px;
+  height: 35px;
+  align-self: center;
+}
+.delete-button:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+.list{
+  display: grid; 
+  grid-template-columns: 200px 100px 100px;
+  margin-top: 5px;
+  column-gap: 10px;
+}
+
+.todo-container{
+  display: grid;
+  grid-template-columns: 200px 100px 100px;
+  column-gap: 10px;
+  width: 500px;
+} 
+

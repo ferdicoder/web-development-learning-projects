@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="DOM-rock.css" />
+    <title>RockPaperScissor</title>
+  </head>
+  <body>
+    <h1>ROCK-PAPER-SCISSOR</h1>
+
+    <button  class="move-button" id="rock-button">
+      <img class="move-image" src="Rock-emoji.png" alt="rock" />
+    </button>
+
+    <button class="move-button" id="paper-button">
+      <img class="move-image" src="Paper-emoji.png" alt="paper" />
+    </button>
+
+    <button  class="move-button" id="scissor-button">
+      <img class="move-image" src="Scissors-emoji.png" alt="scissor"/>
+    </button>
+
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
+    <button id="reset-button" onclick="resetScore();">Reset Score</button>
+    <button id="auto-button" onclick="autoPlay();">Auto Play</button>
+
+    <script src="DOM-rock.js"></script>
+  </body>
+</html>

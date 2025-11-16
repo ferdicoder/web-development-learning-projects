@@ -1,0 +1,56 @@
+body{
+      background-color: black;
+      font-family: Arial;
+    }
+    h1, p{
+      color: white;
+    }
+    .js-score{
+      position: relative;
+      left: 100px;
+      bottom: -3px;
+    }
+    .js-result{
+      position: relative;
+      left: 150px;
+      bottom: -3px;
+      font-weight: bold;
+    }
+    .move-button{
+      background-color: black;
+      border: 3px solid white;
+      border-radius: 120px;
+      padding: 30px; 
+      margin-left: 10px;
+    }
+    .move-button:hover{
+      cursor: pointer; 
+    }
+    .move-image{
+      height: 50px;
+      border-radius: 100px;
+    }
+    #reset-button, #auto-button{
+      background-color: whitesmoke;
+      border: none;
+      padding: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer; 
+    }
+    #reset-button{
+      position: relative;
+      left: 50px;
+    }
+    #auto-button{
+      position: relative; 
+      left: 90px;
+    }
+
+    .js-moves{
+      margin-top: 20px;
+      position: relative;
+      left: 70px;
+    }
+
+    
