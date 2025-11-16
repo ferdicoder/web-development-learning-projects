@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font: Sans Stack Text - from Google Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+  <title>Laboratory 8</title>
+  <link rel="stylesheet" href="Gelito_Lab-8.css">
+  <script defer src="Gelito_Lab-8.js"></script>
+</head>
+<body>
+  
+  <!-- Header Section: Title and description -->
+  <header>
+    <h1>INFINITE RANDOM MATH QUIZ</h1> <!-- Main title -->
+    <h4>Battle of Attrition, Condition your Basics</h4> <!-- Subtitle gibberish -->
+  </header>
+
+  <!-- Main Quiz Container -->
+  <main class="quiz-box">
+    
+    <!-- Equation Display Area -->
+    <div class="equation-container">
+      <p id="num-1"></p> <!-- First number -->
+      <p id="op"></p> <!-- Operator (+, -, *, /) -->
+      <p id="num-2"></p> <!-- Second number -->
+      <p>=</p> <!-- Equal sign -->
+      <p id="ans"></p> <!-- Answer placeholder -->
+      <input id="input-box" type="text" placeholder="ANSWER" required> <!-- User input -->
+    </div>
+
+    <!-- Score Display Area -->
+    <div class="score-box"></div> <!-- Shows correct/wrong count -->
+
+    <!-- Reset Button Container -->
+    <div class="reset-btn-container">
+      <button class="reset">RESET SCORE</button> <!-- Resets score to 0 -->
+    </div>
+    
+  </main>
+
+</body>
+</html>   

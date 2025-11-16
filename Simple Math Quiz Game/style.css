@@ -1,0 +1,166 @@
+/* 
+  ? body customization 
+  * fonts loaded from google font connected to HTML(need internet)
+  * used grid to center the quiz box
+*/
+body{
+  background-color: rgb(27, 26, 26);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: 'Stack Sans Text';
+}
+
+/*
+  ? center h1 and h3 and color them white
+  * used heading tags for title and creative gibberish
+  * flexbox for centering the components 
+  * putting margin to the bottom to adjust the quiz box 
+*/
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+header h1, header h4{
+  flex: 1;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+header h4{
+  color: gray;
+}
+
+/*
+  ?container of the all quiz components
+  * used flex box to align all the components vertically centered
+  * with the gutter or gap of 20px to ensure distance of the each component
+  * height nad width used viewport for adjusting screen size
+  * padding as margin of overall component against the border
+  * box-sizing for better sizes of the component inside the container 
+ */
+.quiz-box{
+  border: 1px solid transparent; 
+  width: 80vh; 
+  height: 70vh; 
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-sizing: border-box;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 5px rgba(24, 23, 23, 0.562);
+  border-radius: 10px;
+}
+
+/*
+  ? container of equation in <p> and <input>
+  * used flexbox to align component horizontally 
+  * responsive width size
+  * height fit to content to avoid mixed up to the other component
+*/
+.equation-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+}
+
+/*
+  ?all <p> properties inside equation-container 
+  * removed margin each sides for better layouting 
+*/
+.equation-container p{
+  flex: 0 0 15%;
+  color: white; 
+  margin: 0; 
+  font-size: 18px ;
+}
+
+/*
+  *<input> properties
+  * responsive growing but not shrinking as flex component
+  * removes border for clarity and adjust the font size of the text inside
+*/
+.equation-container input{
+  background-color: transparent;
+  width: 100%;
+  color: white;
+  flex: 1 0 70px;
+  border: none;
+  font-size: 16px;
+}
+
+/*
+  *remove the border of <input> while focusing
+*/
+.equation-container input:focus{
+  outline: none; 
+}
+
+/*
+  ? container of the score 
+  * scoreboard template for the html generation from js
+  * used flexbox to center component 
+  * responsive width and height
+*/
+.score-box{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 4px;
+}
+
+/*
+  ?all <p> properties inside the score-box
+* removed margin and adjusted th font-size
+*/
+.score-box p{
+  margin: 0;
+  font-size: 14px; 
+}
+
+/*
+  ?container for the reset button
+  * used flexbox to center all components
+*/
+.reset-btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  ?<button> properties
+  ? transition-animation for shrinking and growing(in hover) of button
+  * notice the width properties 
+*/
+.reset-btn-container button{
+  width: 50%;
+  height: 40px;
+  border: 2px solid;  
+  background-color:transparent;
+  color: white; 
+  border-image: linear-gradient(to right, rgb(57, 95, 219), rgb(201, 21, 21))1;
+  cursor: pointer;
+  transition: all .8s;
+  
+}
+.reset-btn-container button:hover{
+  width: 100%;
+  border-image: linear-gradient(to left, rgb(57, 95, 219), rgb(201, 21, 21))1;
+  opacity: 0.8; 
+  transition: border-image .8s, opacity 0.5s, width 0.5s;
+}
+.reset-btn-container button:active{
+  opacity: .5;
+  transition: .15s;
+}
