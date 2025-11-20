@@ -5,7 +5,6 @@ function generateColors(){
   
   for(let i = 0; i < 6; i++){
     color += hexChars[Math.floor(Math.random() * 16)];
-    console.log(color); 
   }
   
   return color;
@@ -31,7 +30,6 @@ generateButton.addEventListener('click', () => {
 let colorContainer = document.querySelector('.color-palette-container');
 
 colorContainer.addEventListener('click', (event) => {
-   
   if(event.target.classList.contains('colors')){
     const clickedColor = event.target;
     const colorText = clickedColor.textContent;
