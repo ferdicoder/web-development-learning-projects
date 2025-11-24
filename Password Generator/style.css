@@ -1,17 +1,11 @@
 body{
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial;
   padding: 0 25px 0 25px; 
   box-sizing: border-box;
-  background-color: rgb(22, 22, 22);
-}
-header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: whitesmoke;
+  display: flex; 
   justify-content: center;
-}
-header h1{
-  color: white
+  
 }
 main{
   display: flex;  
@@ -19,19 +13,26 @@ main{
   justify-content: center;
 }
 section{
-  border: 1px solid lightblue; 
+  border: 3px solid rgb(0, 0, 0); 
   width: 500px;
   height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 25px;
+  gap: 15px;
+  padding: 15px;
   box-sizing: border-box; 
+  border-radius: 5px;
+  position: relative;
 }
 section div{
   margin: 0;
+  flex: 1;
+}
+.header-box{
+  color: rgb(0, 0, 0); 
+  
 }
 .message-box{
   text-align: center;
@@ -39,20 +40,61 @@ section div{
   background-color: rgba(235, 30, 30, 0.568);
   padding: 5px;
   width: 100%;
-  display: none;
+  height: fit-content;
+  font-size: 14px;
+  color: rgb(0, 0, 0); 
+  visibility: hidden;
 }
 .password-box{
-  border: 1px solid lightblue; 
-  color: white; 
+  border: 2px solid rgb(0, 0, 0); 
+  font-size: 14px;
   width: 100%;
   height: 20px;
   padding: 5px; 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  border-radius: 3px;
+}
+.password-text{
+  color: rgb(70, 64, 64); 
+  font-size: 14px;
+  margin: 0;
+  flex: 1;
+  text-align: center; 
+  margin-left: 30px;
+  margin-top: 2px;
+  font-weight: bold;
+}
+.copy-btn{
+  flex-shrink: 0;
+  background-color: transparent;
+  border: none;
+}
+.copy-btn:hover{
+  cursor: pointer; 
+}
+.password-box button img{
+  object-fit: cover;
+  height: 100%;
 }
 #get-length{
   width: 30px;
   height: 30px;
   text-align: center;
+}
+.button-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#generate-btn{
+  cursor: pointer; 
+  color: white; 
+  background-color: black;
+  border: none; 
+  width: 60%;
+  height: 25px;
+  border-radius: 5px;
+  flex-shrink: 0;
 }
 

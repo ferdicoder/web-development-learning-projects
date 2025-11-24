@@ -16,7 +16,7 @@ This repository will remain active until I complete my degree (expected August 2
 - Rock, Paper, Scissors
 - YouTube Clone UI
 - Basic Calculator
-- Ammazon Interactive E-Commerce UI
+- Amazon Interactive E-Commerce UI
 
 ## Tech Stack _(as of November 2025)_
 - HTML

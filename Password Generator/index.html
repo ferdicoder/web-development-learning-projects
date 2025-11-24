@@ -13,22 +13,29 @@
 </head>
 <body>
   
-  <header>
-    <h1>PASSWORD GENERATOR</h1>
-  </header>
-
   <main>
     <section>
 
-      <div class="message-box"></div>
+      <div class="header-box">
+        <h1>PASSWORD GENERATOR</h1>
+      </div>
 
-      <div class="password-box"></div>
+      <div class="message-box">
+        <span>The password must be more than 8 and less than 35 characters.</span>
+      </div>
 
-      <div>
-        <input type="text" id="get-length">
+      <div class="password-box">
+        <span class="password-text"></span>
+        <button class="copy-btn">
+          <img src="copy.png">
+        </button>
       </div>
 
       <div>
+        <input type="text" id="get-length" placeholder="8">
+      </div>
+
+      <div class="button-container">
         <button id="generate-btn">Generate</button>
       </div>
 

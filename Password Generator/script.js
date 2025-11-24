@@ -2,17 +2,17 @@ const messageBox = document.querySelector('.message-box');
 const generateButton = document.querySelector('#generate-btn'); 
 const getPassword = document.querySelector('#get-length'); 
 const passwordContainer = document.querySelector('.password-box'); 
+const passwordText = document.querySelector('.password-text'); 
+const copyButton = document.querySelector('.copy-btn'); 
 
 function generatePassword(passwordLength){
   if(passwordLength < 8 || passwordLength > 35){
-    
-    messageBox.style.display = 'block';
-    messageBox.innerHTML = 'The password must be more than 8 and less than 35 characters.'
+    messageBox.style.visibility = 'visible';
     getPassword.value = ''; 
     return '<span style="color: red">Invalid</span>'; 
   }
-  messageBox.style.display = 'none'; 
-  combination = '123456789abcdefghijklmnopqrstuvwxyz';
+  messageBox.style.visibility = 'hidden'; 
+  let combination = '123456789abcdefghijklmnopqrstuvwxyz';
   let password = ''; 
   for(let i = 0; i < passwordLength; i++){
     password+=combination[Math.floor(((Math.random()*combination.length)))]; 
@@ -20,8 +20,34 @@ function generatePassword(passwordLength){
   return password; 
 }
 
-generateButton.addEventListener('click', ()=>{
+function givePassword(){
   let length = getPassword.value;
   const password = generatePassword(length); 
-  passwordContainer.innerHTML = password; 
+  return password; 
+}
+
+generateButton.addEventListener('click', ()=>{
+  passwordText.innerHTML = givePassword(); 
+}); 
+
+
+getPassword.addEventListener('keydown', (event)=>{
+  console.log(event.key);   
+  if(event.key === 'Enter'){
+    passwordText.innerHTML = givePassword(); 
+  }
+});
+
+copyButton.addEventListener('click', (event)=>{
+  copyButton.innerHTML = '<img src="check.jpg">' 
+  if(event.target.classList.contains('password-text')){
+    const clickedPassword = event.target; 
+    const passwordText = clickedPassword.textContent; 
+    
+    navigator.clipboard.writeText(passwordText); 
+    console.log(passwordText); 
+  }
+  setTimeout(()=>{
+    copyButton.innerHTML = '<img src="copy.png">'
+  }, 1000); 
 }); 
