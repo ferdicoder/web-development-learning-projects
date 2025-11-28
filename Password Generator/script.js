@@ -38,16 +38,28 @@ getPassword.addEventListener('keydown', (event)=>{
   }
 });
 
+copyButton.addEventListener('click', () => {
+  const textToCopy = passwordText.textContent;
+  if (!textToCopy) return;
+
+  copyButton.innerHTML = '<img src="check.jpg">';
+  navigator.clipboard.writeText(textToCopy).finally(() => {
+    setTimeout(() => {
+      copyButton.innerHTML = '<img src="copy.png">';
+    }, 1000);
+  });
+});
+
+/*
 copyButton.addEventListener('click', (event)=>{
   copyButton.innerHTML = '<img src="check.jpg">' 
   if(event.target.classList.contains('password-text')){
-    const clickedPassword = event.target; 
-    const passwordText = clickedPassword.textContent; 
-    
-    navigator.clipboard.writeText(passwordText); 
+    const passwordText = passwordText.textContent;  
     console.log(passwordText); 
+    navigator.clipboard.writeText(passwordText); 
   }
   setTimeout(()=>{
     copyButton.innerHTML = '<img src="copy.png">'
   }, 1000); 
 }); 
+*/
