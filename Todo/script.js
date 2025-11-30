@@ -3,8 +3,13 @@ const taskName = document.querySelector('#task-name');
 const taskDate = document.querySelector('#task-date'); 
 const addTaskButton = document.querySelector('#addTask-button');
 
+const taskStorage = JSON.parse(localStorage.getItem('tasks')) || [] 
+renderTask(); 
 
-let taskStorage = [] 
+function saveToLocalStorage(taskStorage){
+  const storedTasks = JSON.stringify(taskStorage); 
+  localStorage.setItem('tasks', storedTasks);
+}
 function addTask(){
   if(taskName.value === '' || taskDate.value === ''){
     console.log('wew'); 
@@ -14,11 +19,10 @@ function addTask(){
   let date = taskDate.value;
   let isDone = false; 
   taskStorage.push({name,date,isDone}); 
-  //const storeTasks = JSON.stringify(taskStorage); 
+  saveToLocalStorage(taskStorage); 
   taskName.value = ''; 
   taskDate.value = ''; 
-  console.log(taskStorage); 
-  //localStorage.setItem('tasks', storeTasks); 
+  //console.log(taskStorage); 
 }
 addTaskButton.addEventListener('click', () => {
   addTask();
@@ -27,12 +31,14 @@ addTaskButton.addEventListener('click', () => {
 
 
 function renderTask(){
-  //let containerHTML = '';
+  if(taskStorage.length === 0){
+    return taskContainer.innerHTML = '<p>No task</p>'; 
+  }
   taskContainer.innerHTML = ''; 
   taskStorage.forEach((value,index) =>{
-    
-    const {name, date} = value; 
-    let task = createTask(name, date, index); 
+    const {name, date, isDone} = value; 
+    let task = createTask(name, date, isDone, index);
+    taskContainer.appendChild(task);  
     /*
     const html = `
       <div class="task-list">
@@ -44,7 +50,6 @@ function renderTask(){
     `
     containerHTML += html; 
     */
-    taskContainer.appendChild(task); 
   }); 
   /*
   const deleteButton = document.querySelectorAll('.delete-btn'); 
@@ -67,33 +72,39 @@ function renderTask(){
   */
 }
 
-function createTask(name, date, index){
+function createTask(name, date, isDone, index){
   const div = document.createElement('div'); 
   div.className = 'task-list'; 
   div.innerHTML = `
     <p>${name}</p>
     <p>${date}</p>
   `
+  
   const deleteButton = document.createElement('button'); 
   deleteButton.className = 'delete-button';
-  const doneButton = document.createElement('button');
-  doneButton.className = 'done-button';
-  
   deleteButton.textContent = 'Delete Task'; 
-  doneButton.textContent = 'Done'; 
-
   deleteButton.addEventListener('click', ()=>{
     taskStorage.splice(index, 1); 
+    saveToLocalStorage(taskStorage); 
     renderTask(); 
   }); 
+  div.appendChild(deleteButton); 
+
+  if(taskStorage[index].isDone === true){
+    div.querySelectorAll('p').forEach(p => p.style.textDecoration = 'line-through'); 
+    return div; 
+  }
+  
+  const doneButton = document.createElement('button');
+  doneButton.className = 'done-button';
+  doneButton.textContent = 'Done'; 
   doneButton.addEventListener('click', ()=>{
-    //div.style.textDecoration = 'line-through'; 
     taskStorage[index].isDone = true; 
     div.querySelectorAll('p').forEach(p => p.style.textDecoration = 'line-through'); 
     div.querySelectorAll('.done-button').forEach(button =>{button.style.visibility = 'hidden'}); 
+    saveToLocalStorage(taskStorage); 
   }); 
-  
-  div.appendChild(deleteButton); 
   div.appendChild(doneButton); 
+
   return div; 
 }
