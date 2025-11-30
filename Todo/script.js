@@ -10,6 +10,7 @@ function saveToLocalStorage(taskStorage){
   const storedTasks = JSON.stringify(taskStorage); 
   localStorage.setItem('tasks', storedTasks);
 }
+
 function addTask(){
   if(taskName.value === '' || taskDate.value === ''){
     console.log('wew'); 
@@ -79,7 +80,7 @@ function createTask(name, date, isDone, index){
     <p>${name}</p>
     <p>${date}</p>
   `
-  
+
   const deleteButton = document.createElement('button'); 
   deleteButton.className = 'delete-button';
   deleteButton.textContent = 'Delete Task'; 
@@ -89,9 +90,20 @@ function createTask(name, date, isDone, index){
     renderTask(); 
   }); 
   div.appendChild(deleteButton); 
+  
 
-  if(taskStorage[index].isDone === true){
+  if(isDone){
     div.querySelectorAll('p').forEach(p => p.style.textDecoration = 'line-through'); 
+    const undoneButton = document.createElement('button'); 
+    undoneButton.className = 'undone-button';
+    undoneButton.textContent = 'Undone'; 
+    undoneButton.addEventListener('click', ()=>{
+      div.querySelectorAll('p').forEach(p => p.style.textDecoration = 'none'); 
+      taskStorage[index].isDone = false; 
+      saveToLocalStorage(taskStorage); 
+      renderTask(); 
+    }); 
+    div.appendChild(undoneButton); 
     return div; 
   }
   
@@ -103,6 +115,7 @@ function createTask(name, date, isDone, index){
     div.querySelectorAll('p').forEach(p => p.style.textDecoration = 'line-through'); 
     div.querySelectorAll('.done-button').forEach(button =>{button.style.visibility = 'hidden'}); 
     saveToLocalStorage(taskStorage); 
+    renderTask(); 
   }); 
   div.appendChild(doneButton); 
 
