@@ -9,7 +9,7 @@ Although the projects may be similar to common tutorials found online, all imple
 - Build consistency in coding habits
 - Document my growth over time
 
-## Contents _(as of November 2025)_
+## Contents _(as of Jan 2026)_
 - Color Palette Generator
 - Infinite Math Game
 - Rock, Paper, Scissors
@@ -17,7 +17,8 @@ Although the projects may be similar to common tutorials found online, all imple
 - Basic Calculator
 - Password Generator
 
-## Tech Stack _(as of November 2025)_
+## Tech Stack _(as of Jan 2026)_
 - HTML
 - CSS
 - JavaScript
+- PHP
