@@ -1,7 +1,6 @@
-
 body {
 	font-family: Arial, sans-serif;
-	background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+	background: linear-gradient(45deg, #89f7fe 0%, #66a6ff 100%);
 	min-height: 100vh;
 	margin: 0;
 	display: flex;
@@ -39,6 +38,9 @@ header {
 	border-radius: 8px;
 	font-size: 1rem;
 }
+#city-input:read-only{
+	background-color: #ccc6c65d;
+}
 
 #weather-form button {
 	padding: 0.5rem 1.2rem;
@@ -68,6 +70,12 @@ header {
 
 #temperature {
 	font-size: 2.5rem;
+	font-weight: bold;
+	margin: 0.5rem 0;
+	color: #0077ff;
+}
+.error-style{
+	font-size: 1rem;
 	font-weight: bold;
 	margin: 0.5rem 0;
 	color: #0077ff;

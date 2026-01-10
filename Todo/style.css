@@ -1,1 +1,15 @@
-a
+
+body{
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.header-section{
+  display: flex;
+  justify-content: center;
+  border: 1px solid lightblue;
+  height: fit-content;
+}
+.header-section h1{
+  margin: 0; 
+}
