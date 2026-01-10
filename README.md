@@ -3,7 +3,6 @@ This repository contains my collection of web development learning projects, cre
 
 Although the projects may be similar to common tutorials found online, all implementations are written in my own way to reinforce my understanding of different technologies
 
-This repository will remain active until I complete my degree (expected August 2027), and will serve as a public record of my learning progress.
 
 ## Purpose of this Repo 
 - Practice applying real-world web development concepts
@@ -16,7 +15,7 @@ This repository will remain active until I complete my degree (expected August 2
 - Rock, Paper, Scissors
 - YouTube Clone UI
 - Basic Calculator
-- Amazon Interactive E-Commerce UI
+- Password Generator
 
 ## Tech Stack _(as of November 2025)_
 - HTML
