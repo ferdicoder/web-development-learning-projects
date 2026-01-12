@@ -13,9 +13,9 @@ Although the projects may be similar to common tutorials found online, all imple
 - Color Palette Generator
 - Infinite Math Game
 - Rock, Paper, Scissors
-- YouTube Clone UI
 - Basic Calculator
 - Password Generator
+- Weather App
 
 ## Tech Stack _(as of Jan 2026)_
 - HTML
