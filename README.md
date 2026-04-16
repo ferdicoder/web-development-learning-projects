@@ -16,9 +16,13 @@ Although the projects may be similar to common tutorials found online, all imple
 - Basic Calculator
 - Password Generator
 - Weather App
+- Todo Lists(Vanilla JS version)
+- Todo List v2(React) 
 
-## Tech Stack _(as of Jan 2026)_
+## Tech Stack _(as of April 2026)_
 - HTML
 - CSS
 - JavaScript
+- Tailwind CSS
 - Node + Express
+- React
